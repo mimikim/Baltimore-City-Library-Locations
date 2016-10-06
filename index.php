@@ -1,4 +1,4 @@
-<!HTML DOCTYPE>
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>Baltimore Library Locations</title>
