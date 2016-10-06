@@ -8,7 +8,6 @@
 <h1>Baltimore's Enoch Pratt Free Library Locations</h1>
 <p>
     This web app finds and maps the location of every Baltimore city public library listed on the Enoch Pratt Library website. It makes use of a JSON data set located at <a href="https://data.baltimorecity.gov/Culture-Arts/Libraries/tgtv-wr5u">https://data.baltimorecity.gov/Culture-Arts/Libraries/tgtv-wr5u</a>
-
 </p>
 <div id="map" style="height:400px; width: 400px;"></div>
 <br><br>
