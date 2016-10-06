@@ -1,0 +1,582 @@
+{
+    "meta" : {
+        "view" : {
+            "id" : "tgtv-wr5u",
+            "name" : "Libraries",
+            "attribution" : "Enoch Pratt Free Library",
+            "attributionLink" : "http://www.prattlibrary.org/",
+            "averageRating" : 0,
+            "category" : "Culture & Arts",
+            "createdAt" : 1323886865,
+            "description" : "This data set shows the location of Baltimore City public libraries listed on the Enoch Pratt Library website.",
+            "displayType" : "table",
+            "downloadCount" : 626,
+            "indexUpdatedAt" : 1414539797,
+            "licenseId" : "CC_30_BY",
+            "newBackend" : false,
+            "numberOfComments" : 0,
+            "oid" : 7693247,
+            "publicationAppendEnabled" : false,
+            "publicationDate" : 1396568709,
+            "publicationGroup" : 260337,
+            "publicationStage" : "published",
+            "rowsUpdatedAt" : 1396568706,
+            "rowsUpdatedBy" : "6r9a-dfdj",
+            "tableId" : 1533950,
+            "totalTimesRated" : 0,
+            "viewCount" : 540,
+            "viewLastModified" : 1461175812,
+            "viewType" : "tabular",
+            "columns" : [ {
+                "id" : -1,
+                "name" : "sid",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":sid",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "id",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":id",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "position",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":position",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "created_at",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":created_at",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "created_meta",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":created_meta",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "updated_at",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":updated_at",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "updated_meta",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":updated_meta",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : -1,
+                "name" : "meta",
+                "dataTypeName" : "meta_data",
+                "fieldName" : ":meta",
+                "position" : 0,
+                "renderTypeName" : "meta_data",
+                "format" : { }
+            }, {
+                "id" : 141279138,
+                "name" : "name",
+                "dataTypeName" : "text",
+                "fieldName" : "name",
+                "position" : 1,
+                "renderTypeName" : "text",
+                "tableColumnId" : 1786568,
+                "width" : 148,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "largest" : "Waverly",
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : "Central",
+                        "count" : 20
+                    }, {
+                        "item" : "Brooklyn",
+                        "count" : 19
+                    }, {
+                        "item" : "Canton",
+                        "count" : 18
+                    }, {
+                        "item" : "Cherry Hill",
+                        "count" : 17
+                    }, {
+                        "item" : "Clifton",
+                        "count" : 16
+                    }, {
+                        "item" : "Edmondson",
+                        "count" : 15
+                    }, {
+                        "item" : "Forest Park",
+                        "count" : 14
+                    }, {
+                        "item" : "Govans",
+                        "count" : 13
+                    }, {
+                        "item" : "Hamilton",
+                        "count" : 12
+                    }, {
+                        "item" : "Hampden",
+                        "count" : 11
+                    }, {
+                        "item" : "Herring Run",
+                        "count" : 10
+                    }, {
+                        "item" : "Light St",
+                        "count" : 9
+                    }, {
+                        "item" : "Northwood",
+                        "count" : 8
+                    }, {
+                        "item" : "Patterson Park",
+                        "count" : 7
+                    }, {
+                        "item" : "Pennsylvania",
+                        "count" : 6
+                    }, {
+                        "item" : "Reisterstown",
+                        "count" : 5
+                    }, {
+                        "item" : "Roland Park",
+                        "count" : 4
+                    }, {
+                        "item" : "Walbrook",
+                        "count" : 3
+                    }, {
+                        "item" : "Washington Village",
+                        "count" : 2
+                    }, {
+                        "item" : "Waverly",
+                        "count" : 1
+                    } ],
+                    "smallest" : "Brooklyn"
+                },
+                "format" : { }
+            }, {
+                "id" : 141279139,
+                "name" : "zipCode",
+                "dataTypeName" : "text",
+                "fieldName" : "zipcode",
+                "position" : 2,
+                "renderTypeName" : "text",
+                "tableColumnId" : 1786569,
+                "width" : 64,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "largest" : "21231",
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : "21201",
+                        "count" : 20
+                    }, {
+                        "item" : "21225",
+                        "count" : 19
+                    }, {
+                        "item" : "21224",
+                        "count" : 18
+                    }, {
+                        "item" : "21213",
+                        "count" : 17
+                    }, {
+                        "item" : "21229",
+                        "count" : 16
+                    }, {
+                        "item" : "21216",
+                        "count" : 15
+                    }, {
+                        "item" : "21212",
+                        "count" : 14
+                    }, {
+                        "item" : "21214",
+                        "count" : 13
+                    }, {
+                        "item" : "21211",
+                        "count" : 12
+                    }, {
+                        "item" : "21230",
+                        "count" : 11
+                    }, {
+                        "item" : "21218",
+                        "count" : 10
+                    }, {
+                        "item" : "21217",
+                        "count" : 9
+                    }, {
+                        "item" : "21215",
+                        "count" : 8
+                    }, {
+                        "item" : "21210",
+                        "count" : 7
+                    }, {
+                        "item" : "21231",
+                        "count" : 6
+                    } ],
+                    "smallest" : "21201"
+                },
+                "format" : { }
+            }, {
+                "id" : 141279140,
+                "name" : "neighborhood",
+                "dataTypeName" : "text",
+                "fieldName" : "neighborhood",
+                "position" : 3,
+                "renderTypeName" : "text",
+                "tableColumnId" : 1786570,
+                "width" : 199,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "largest" : "Washington Village",
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : "Downtown",
+                        "count" : 20
+                    }, {
+                        "item" : "Brooklyn",
+                        "count" : 19
+                    }, {
+                        "item" : "Canton",
+                        "count" : 18
+                    }, {
+                        "item" : "Cherry Hill",
+                        "count" : 17
+                    }, {
+                        "item" : "South Clifton Park",
+                        "count" : 16
+                    }, {
+                        "item" : "Rognel Heights",
+                        "count" : 15
+                    }, {
+                        "item" : "Forest Park",
+                        "count" : 14
+                    }, {
+                        "item" : "Homeland",
+                        "count" : 13
+                    }, {
+                        "item" : "Harford-Echodale/Perring Parkway",
+                        "count" : 12
+                    }, {
+                        "item" : "Hampden",
+                        "count" : 11
+                    }, {
+                        "item" : "Belair-Edison",
+                        "count" : 10
+                    }, {
+                        "item" : "Federal Hill",
+                        "count" : 9
+                    }, {
+                        "item" : "New Northwood",
+                        "count" : 8
+                    }, {
+                        "item" : "McElderry Park",
+                        "count" : 7
+                    }, {
+                        "item" : "Druid Heights",
+                        "count" : 6
+                    }, {
+                        "item" : "Reisterstown Station",
+                        "count" : 5
+                    }, {
+                        "item" : "Roland Park",
+                        "count" : 4
+                    }, {
+                        "item" : "Rosemont",
+                        "count" : 3
+                    }, {
+                        "item" : "Washington Village",
+                        "count" : 2
+                    }, {
+                        "item" : "Oakenshawe",
+                        "count" : 1
+                    } ],
+                    "smallest" : "Belair-Edison"
+                },
+                "format" : { }
+            }, {
+                "id" : 141279141,
+                "name" : "councilDistrict",
+                "dataTypeName" : "number",
+                "fieldName" : "councildistrict",
+                "position" : 4,
+                "renderTypeName" : "number",
+                "tableColumnId" : 1786571,
+                "width" : 109,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "average" : "8.090909090909091",
+                    "largest" : "14",
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : "11",
+                        "count" : 20
+                    }, {
+                        "item" : "10",
+                        "count" : 19
+                    }, {
+                        "item" : "1",
+                        "count" : 18
+                    }, {
+                        "item" : "12",
+                        "count" : 17
+                    }, {
+                        "item" : "8",
+                        "count" : 16
+                    }, {
+                        "item" : "6",
+                        "count" : 15
+                    }, {
+                        "item" : "4",
+                        "count" : 14
+                    }, {
+                        "item" : "3",
+                        "count" : 13
+                    }, {
+                        "item" : "7",
+                        "count" : 12
+                    }, {
+                        "item" : "13",
+                        "count" : 11
+                    }, {
+                        "item" : "5",
+                        "count" : 10
+                    }, {
+                        "item" : "14",
+                        "count" : 9
+                    } ],
+                    "smallest" : "1",
+                    "sum" : "178"
+                },
+                "format" : { }
+            }, {
+                "id" : 141279142,
+                "name" : "policeDistrict",
+                "dataTypeName" : "text",
+                "fieldName" : "policedistrict",
+                "position" : 5,
+                "renderTypeName" : "text",
+                "tableColumnId" : 1786572,
+                "width" : 143,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "largest" : "SOUTHWESTERN",
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : "CENTRAL",
+                        "count" : 20
+                    }, {
+                        "item" : "SOUTHERN",
+                        "count" : 19
+                    }, {
+                        "item" : "SOUTHEASTERN",
+                        "count" : 18
+                    }, {
+                        "item" : "EASTERN",
+                        "count" : 17
+                    }, {
+                        "item" : "SOUTHWESTERN",
+                        "count" : 16
+                    }, {
+                        "item" : "NORTHWESTERN",
+                        "count" : 15
+                    }, {
+                        "item" : "NORTHERN",
+                        "count" : 14
+                    }, {
+                        "item" : "NORTHEASTERN",
+                        "count" : 13
+                    } ],
+                    "smallest" : "CENTRAL"
+                },
+                "format" : { }
+            }, {
+                "id" : 141279143,
+                "name" : "Location 1",
+                "dataTypeName" : "location",
+                "fieldName" : "location_1",
+                "position" : 6,
+                "renderTypeName" : "location",
+                "tableColumnId" : 1786573,
+                "width" : 220,
+                "cachedContents" : {
+                    "non_null" : 22,
+                    "largest" : {
+                        "human_address" : "{\"address\":\"856 Washington\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                    },
+                    "null" : 0,
+                    "top" : [ {
+                        "item" : {
+                            "human_address" : "{\"address\":\"400 Cathedral St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 20
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"300 Patapsco Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 19
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"1030 Ellwood St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 18
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"606 Cherry Hill\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 17
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"2001 Wolfe St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 16
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"4330 Edmondson Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 15
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"3023 Garrison\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 14
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"5714 Bellona Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 13
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"5910 Harford Rd\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 12
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"3641 Falls Rd\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 11
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"3801 Erdman Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 10
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"1251 Light St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 9
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"4420 Loch\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 8
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"158 Linwood\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 7
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"1531 North Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 6
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"6310 Reisterstown\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 5
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"5108 Roland Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 4
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"3203 North Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 3
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"856 Washington\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 2
+                    }, {
+                        "item" : {
+                            "human_address" : "{\"address\":\"400 33rd St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                        },
+                        "count" : 1
+                    } ],
+                    "smallest" : {
+                        "human_address" : "{\"address\":\"1030 Ellwood St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}"
+                    }
+                },
+                "format" : { },
+                "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+            } ],
+            "grants" : [ {
+                "inherited" : false,
+                "type" : "viewer",
+                "flags" : [ "public" ]
+            } ],
+            "license" : {
+                "name" : "Creative Commons Attribution 3.0 Unported",
+                "logoUrl" : "images/licenses/cc30by.png",
+                "termsLink" : "http://creativecommons.org/licenses/by/3.0/legalcode"
+            },
+            "owner" : {
+                "id" : "6r9a-dfdj",
+                "displayName" : "Open Baltimore",
+                "roleName" : "administrator",
+                "screenName" : "Open Baltimore",
+                "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+            },
+            "query" : { },
+            "rights" : [ "read" ],
+            "tableAuthor" : {
+                "id" : "6r9a-dfdj",
+                "displayName" : "Open Baltimore",
+                "roleName" : "administrator",
+                "screenName" : "Open Baltimore",
+                "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+            },
+            "tags" : [ "books", "library" ],
+            "flags" : [ "default", "restorable", "restorePossibleForType" ]
+        }
+    },
+    "data" : [ [ 1, "3C373046-AAC5-4D6B-AB99-DA9CA27DBD38", 1, 1323858078, "393202", 1323858078, "393202", "{\n}", "Central", "21201", "Downtown", "11", "CENTRAL", [ "{\"address\":\"400 Cathedral St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 2, "CE73683C-2F71-440E-AF4D-C2417E57C01D", 2, 1323858078, "393202", 1323858078, "393202", "{\n}", "Brooklyn", "21225", "Brooklyn", "10", "SOUTHERN", [ "{\"address\":\"300 Patapsco Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 3, "68567327-9120-4051-BDE3-0DABA68B06AC", 3, 1323858078, "393202", 1323858078, "393202", "{\n}", "Canton", "21224", "Canton", "1", "SOUTHEASTERN", [ "{\"address\":\"1030 Ellwood St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 4, "C6151C35-F0D7-48A9-9982-98A6B13FAFC0", 4, 1323858078, "393202", 1323858078, "393202", "{\n}", "Cherry Hill", "21225", "Cherry Hill", "10", "SOUTHERN", [ "{\"address\":\"606 Cherry Hill\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 5, "C0CD7A1E-D87D-42CE-ADEE-7B94E2206240", 5, 1323858078, "393202", 1323858078, "393202", "{\n}", "Clifton", "21213", "South Clifton Park", "12", "EASTERN", [ "{\"address\":\"2001 Wolfe St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 6, "F82CF40C-879A-4924-9097-B1C0B6A69B05", 6, 1323858078, "393202", 1323858078, "393202", "{\n}", "Edmondson", "21229", "Rognel Heights", "8", "SOUTHWESTERN", [ "{\"address\":\"4330 Edmondson Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 7, "3BA5FC09-D56F-4A9D-B994-D6668CCF7777", 7, 1323858078, "393202", 1323858078, "393202", "{\n}", "Forest Park", "21216", "Forest Park", "6", "NORTHWESTERN", [ "{\"address\":\"3023 Garrison\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 8, "973B0BCF-D824-4EBE-81D8-117D4E93535E", 8, 1323858078, "393202", 1323858078, "393202", "{\n}", "Govans", "21212", "Homeland", "4", "NORTHERN", [ "{\"address\":\"5714 Bellona Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 9, "8A3A7D89-F81D-40C4-898C-68BE16DEC0A5", 9, 1323858078, "393202", 1323858078, "393202", "{\n}", "Hamilton", "21214", "Harford-Echodale/Perring Parkway", "3", "NORTHEASTERN", [ "{\"address\":\"5910 Harford Rd\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 10, "21D9155D-6249-457D-8710-A58C986476B1", 10, 1323858078, "393202", 1323858078, "393202", "{\n}", "Hampden", "21211", "Hampden", "7", "NORTHERN", [ "{\"address\":\"3641 Falls Rd\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 11, "FE28A4B1-4097-43B8-86DA-A58F324BC51E", 11, 1323858078, "393202", 1323858078, "393202", "{\n}", "Herring Run", "21213", "Belair-Edison", "13", "NORTHEASTERN", [ "{\"address\":\"3801 Erdman Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 12, "CF7286D4-4864-4EA1-8B43-91311DDDC4F1", 12, 1323858078, "393202", 1323858078, "393202", "{\n}", "Light St", "21230", "Federal Hill", "10", "SOUTHERN", [ "{\"address\":\"1251 Light St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 13, "0FF95C7B-3B7D-493C-8820-9A7A9CAED617", 13, 1323858078, "393202", 1323858078, "393202", "{\n}", "Northwood", "21218", "New Northwood", "3", "NORTHEASTERN", [ "{\"address\":\"4420 Loch\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 14, "5EF325DF-B9D5-41B8-9934-40BFC8069BE9", 14, 1323858078, "393202", 1323858078, "393202", "{\n}", "Patterson Park", "21224", "McElderry Park", "13", "SOUTHEASTERN", [ "{\"address\":\"158 Linwood\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 15, "DE8D8975-7EC2-427F-B7C2-EB7583FAFEE1", 15, 1323858078, "393202", 1323858078, "393202", "{\n}", "Pennsylvania", "21217", "Druid Heights", "11", "CENTRAL", [ "{\"address\":\"1531 North Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 16, "51EBA7DB-1471-411D-97FA-323F2D167D33", 16, 1323858078, "393202", 1323858078, "393202", "{\n}", "Reisterstown", "21215", "Reisterstown Station", "5", "NORTHWESTERN", [ "{\"address\":\"6310 Reisterstown\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 17, "B7076F8D-3D45-44E2-892D-D41CD7DFED64", 17, 1323858078, "393202", 1323858078, "393202", "{\n}", "Roland Park", "21210", "Roland Park", "6", "NORTHERN", [ "{\"address\":\"5108 Roland Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 18, "AE050281-C5E4-4A70-AF0B-217B65891337", 18, 1323858078, "393202", 1323858078, "393202", "{\n}", "Walbrook", "21216", "Rosemont", "7", "SOUTHWESTERN", [ "{\"address\":\"3203 North Av\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 19, "C57C7C47-CB30-4E7C-8CC9-48BF856B2C27", 19, 1323858078, "393202", 1323858078, "393202", "{\n}", "Washington Village", "21230", "Washington Village", "11", "SOUTHERN", [ "{\"address\":\"856 Washington\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 20, "8326CBA8-7449-4816-9C79-12AAAA64C516", 20, 1323858078, "393202", 1323858078, "393202", "{\n}", "Waverly", "21218", "Oakenshawe", "14", "NORTHERN", [ "{\"address\":\"400 33rd St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 21, "6F15E2A1-05CA-4C88-B304-4DF5BD0942BC", 21, 1323858078, "393202", 1323858078, "393202", "{\n}", "Southeast Anchor", "21224", "Brewers Hill", "1", "SOUTHEASTERN", [ "{\"address\":\"3601 Eastern Ave\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+        , [ 22, "21F94BD7-73B2-46C9-A6D5-4212F1E276FA", 22, 1323858078, "393202", 1323858078, "393202", "{\n}", "Orleans", "21231", "Dunbar-Broadway", "12", "SOUTHEASTERN", [ "{\"address\":\"1303 Oreleans St\",\"city\":\"Baltimore\",\"state\":\"MD\",\"zip\":\"\"}", null, null, null, true ] ]
+    ]
+}
