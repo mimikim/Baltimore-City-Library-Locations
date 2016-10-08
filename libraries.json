@@ -2,13 +2,16 @@
     "locationName": "Brooklyn Branch",
     "address": {
         "streetName": "300 E. Patapsco Ave",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21225"
     },
     "phoneNumber": "410-396-1120",
     "contactEmail": "BRK@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/brooklyn/",
+    "neighborhood" : "Brooklyn",
+    "councilDistrict" : "10",
+    "policeDistrict" : "Southern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -35,13 +38,16 @@
     "locationName": "Canton Branch",
     "address": {
         "streetName": "1030 S. Ellwood Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21224"
     },
     "phoneNumber": "410-396-8548",
     "contactEmail": "CNT@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/canton/",
+    "neighborhood" : "Canton",
+    "councilDistrict" : "1",
+    "policeDistrict" : "Southeastern",
+    "wheelchairAccessible" : "no",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -68,13 +74,16 @@
     "locationName": "Central Library",
     "address": {
         "streetName": "400 Cathedral Street",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21201"
     },
     "phoneNumber": "410-396-5430",
     "contactEmail": "SLRC@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/central/",
+    "neighborhood" : "Downtown",
+    "councilDistrict" : "11",
+    "policeDistrict" : "Central",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 7:00 p.m"
@@ -101,13 +110,16 @@
     "locationName": "Cherry Hill Branch",
     "address": {
         "streetName": "606 Cherry Hill Road",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21225"
     },
     "phoneNumber": "410-396-1168",
     "contactEmail": "CHR@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/cherryhill/",
+    "neighborhood" : "Cherry Hill",
+    "councilDistrict" : "10",
+    "policeDistrict" : "Southern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "closed"
@@ -134,13 +146,16 @@
     "locationName": "Clifton Branch",
     "address": {
         "streetName": "2001 N. Wolfe Street",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21213"
     },
     "phoneNumber": "410-396-0984",
     "contactEmail": "CLF@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/clifton/",
+    "neighborhood" : "South Clifton Park",
+    "councilDistrict" : "12",
+    "policeDistrict" : "Eastern",
+    "wheelchairAccessible" : "no",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "1:00 p.m. - 5:30 p.m"
@@ -167,14 +182,17 @@
     "locationName": "Edmondson Avenue Branch",
     "address": {
         "streetName": "4330 Edmondson Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21229"
     },
     "phoneNumber": "410-396-0946",
     "contactEmail": "EDM@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/edmondson/",
-    "hoursOfOperation": [{
+    "neighborhood" : "Rognel Heights",
+    "councilDistrict" : "8",
+    "policeDistrict" : "Southwestern",
+    "wheelchairAccessible" : "yes"
+    ,     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
     }, {
@@ -200,13 +218,16 @@
     "locationName": "Forest Park Branch",
     "address": {
         "streetName": "3023 Garrison Boulevard",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21216"
     },
     "phoneNumber": "410-396-0942",
     "contactEmail": "FRS@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/forestpark/",
+    "neighborhood" : "Forest Park",
+    "councilDistrict" : "6",
+    "policeDistrict" : "Northwestern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -233,13 +254,16 @@
     "locationName": "Govans Branch",
     "address": {
         "streetName": "5714 Bellona Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21212"
     },
     "phoneNumber": "410-396-6098",
     "contactEmail": "GVN@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/govans/",
+    "neighborhood" : "Homeland",
+    "councilDistrict" : "4",
+    "policeDistrict" : "Northern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "closed"
@@ -266,13 +290,16 @@
     "locationName": "Hamilton Branch",
     "address": {
         "streetName": "5910 Harford Road",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21214"
     },
     "phoneNumber": "410-396-6088",
     "contactEmail": "HML@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/hamilton/",
+    "neighborhood" : "Harford-Echodale/Perring Parkway",
+    "councilDistrict" : "3",
+    "policeDistrict" : "Northeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -299,13 +326,16 @@
     "locationName": "Hampden Branch",
     "address": {
         "streetName": "3641 Falls Road",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21211"
     },
     "phoneNumber": "410-396-6043",
     "contactEmail": "HMP@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/hampden/",
+    "neighborhood" : "Hampden",
+    "councilDistrict" : "7",
+    "policeDistrict" : "Northern",
+    "wheelchairAccessible" : "no",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "closed"
@@ -332,13 +362,16 @@
     "locationName": "Herring Run Branch",
     "address": {
         "streetName": "3801 Erdman Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21213"
     },
     "phoneNumber": "410-396-0996",
     "contactEmail": "HRR@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/herringrun/",
+    "neighborhood" : "Belair-Edison",
+    "councilDistrict" : "13",
+    "policeDistrict" : "Northeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -365,13 +398,16 @@
     "locationName": "Light Street Branch",
     "address": {
         "streetName": "1251 Light Street",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21230"
     },
     "phoneNumber": "410-396-1096",
     "contactEmail": "LGH@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/lightstreet/",
+    "neighborhood" : "Federal Hill",
+    "councilDistrict" : "10",
+    "policeDistrict" : "Southern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -398,13 +434,16 @@
     "locationName": "Northwood Branch",
     "address": {
         "streetName": "4420 Loch Raven Boulevard",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21218"
     },
     "phoneNumber": "410-396-6076",
     "contactEmail": "NRT@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/northwood/",
+    "neighborhood" : "New Northwood",
+    "councilDistrict" : "3",
+    "policeDistrict" : "Northeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -431,13 +470,16 @@
     "locationName": "Orleans Street Branch",
     "address": {
         "streetName": "1303 Orleans Street",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21231"
     },
     "phoneNumber": "410-396-0970",
     "contactEmail": "orl@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/orleans/",
+    "neighborhood" : "Dunbar-Broadway",
+    "councilDistrict" : "12",
+    "policeDistrict" : "Southeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 5:30 p.m"
@@ -464,13 +506,16 @@
     "locationName": "Patterson Park Branch",
     "address": {
         "streetName": "158 N. Linwood Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21224"
     },
     "phoneNumber": "410-396-0983",
     "contactEmail": "PTT@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/pattersonpark/",
+    "neighborhood" : "McElderry Park",
+    "councilDistrict" : "13",
+    "policeDistrict" : "Southeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 5:30 p.m"
@@ -497,13 +542,16 @@
     "locationName": "Pennsylvania Avenue Branch",
     "address": {
         "streetName": "1531 W. North Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21217"
     },
     "phoneNumber": "410-396-0399",
     "contactEmail": "PNN@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/pennave/",
+    "neighborhood" : "Druid Hill",
+    "councilDistrict" : "Central",
+    "policeDistrict" : "11",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -527,49 +575,19 @@
         "hours": "closed"
     }]
 }, {
-    "locationName": "Regional Information Center",
-    "address": {
-        "streetName": "1500 Whetstone Way, Suite 300",
-        "city": "Baltimore",
-        "state": "MD",
-        "zipCode": "21230"
-    },
-    "phoneNumber": "410-732-9570",
-    "contactEmail": "RIC@prattlibrary.org",
-    "website": "http://www.prattlibrary.org/locations/ric/",
-    "hoursOfOperation": [{
-        "day": "Monday",
-        "hours": "8:30 a.m. - 4:30 p.m"
-    }, {
-        "day": "Tuesday",
-        "hours": "8:30 a.m. - 4:30 p.m"
-    }, {
-        "day": "Wednesday",
-        "hours": "8:30 a.m. - 4:30 p.m"
-    }, {
-        "day": "Thursday",
-        "hours": "8:30 a.m. - 4:30 p.m"
-    }, {
-        "day": "Friday",
-        "hours": "8:30 a.m. - 4:30 p.m"
-    }, {
-        "day": "Saturday",
-        "hours": "closed"
-    }, {
-        "day": "Sunday",
-        "hours": "closed"
-    }]
-}, {
     "locationName": "Reisterstown Road Branch",
     "address": {
         "streetName": "6310 Reisterstown Road",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21215"
     },
     "phoneNumber": "410-396-0948",
     "contactEmail": "RST@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/reisterstownroad/",
+    "neighborhood" : "Reisterstown Station",
+    "councilDistrict" : "5",
+    "policeDistrict" : "Northwestern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 5:30 p.m"
@@ -596,13 +614,16 @@
     "locationName": "Roland Park Branch",
     "address": {
         "streetName": "5108 Roland Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21210"
     },
     "phoneNumber": "410-396-6099",
     "contactEmail": "RLN@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/rolandpark/",
+    "neighborhood" : "Roland Park",
+    "councilDistrict" : "6",
+    "policeDistrict" : "Northern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"
@@ -629,13 +650,16 @@
     "locationName": "Southeast Anchor Library",
     "address": {
         "streetName": "3601 Eastern Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21224"
     },
     "phoneNumber": "410-396-1580",
     "contactEmail": "sel@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/southeast/",
+    "neighborhood" : "Brewers Hill",
+    "councilDistrict" : "1",
+    "policeDistrict" : "Southeastern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 8:00 p.m"
@@ -662,13 +686,16 @@
     "locationName": "Walbrook Branch",
     "address": {
         "streetName": "3203 W. North Avenue",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21216"
     },
     "phoneNumber": "410-396-0935",
     "contactEmail": "WLB@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/walbrook/",
+    "neighborhood" : "Rosemont",
+    "councilDistrict" : "7",
+    "policeDistrict" : "Southwestern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 5:30 p.m"
@@ -695,13 +722,16 @@
     "locationName": "Washington Village Branch",
     "address": {
         "streetName": "856 Washington Boulevard",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21230"
     },
     "phoneNumber": "410-396-1099",
     "contactEmail": "WSH@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/washvillage/",
+    "neighborhood" : "Washington Village",
+    "councilDistrict" : "11",
+    "policeDistrict" : "Southern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "10:00 a.m. - 5:30 p.m"
@@ -728,13 +758,16 @@
     "locationName": "Waverly Branch",
     "address": {
         "streetName": "400 E. 33rd Street",
-        "city": "Baltimore",
-        "state": "MD",
+        "cityState" : "Baltimore, MD",
         "zipCode": "21218"
     },
     "phoneNumber": "410-396-6053",
     "contactEmail": "WVR@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/waverly/",
+    "neighborhood" : "Oakenshawe",
+    "councilDistrict" : "14",
+    "policeDistrict" : "Northern",
+    "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
         "hours": "12:00 p.m. - 8:00 p.m"

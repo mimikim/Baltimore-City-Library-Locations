@@ -61,97 +61,21 @@ sort($zip_codes);
     <input type="submit" value="Submit">
 </form>
 <div id="results"></div>
-<script>
-
-    var map;
-    var geocoder;
-
-    function initMap() {
-        geocoder = new google.maps.Geocoder();
-
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 39.299236, lng: -76.609383 },
-            zoom: 11
-        });
-    }
-
-    $(document).ready(function() {
-
-        $('#form').on('submit', function(e){
-
-            e.preventDefault();
-
-            $('#results').empty();
-
-            initMap();
-
-            var zip_code = $(this).find(':selected').val();
-
-            query_libraries( zip_code );
-        });
-
-        function query_libraries( zip_code ) {
-
-            $.getJSON( 'libraries.json', function( data ) {
-
-                //console.log(data);
-
-                for( var key in data ) {
-
-                    // object iteration
-                    var obj = data[key];
-
-                    var address_obj = obj['address'];
-
-                    if ( address_obj.zipCode == zip_code ) {
-
-                        var address = address_obj.streetName + '<br>' + address_obj.city + ', ' + address_obj.state + ', ' + address_obj.zipCode;
-
-                        var name = obj['locationName'],
-                            phone = obj['phoneNumber'],
-                            email = obj['contactEmail'],
-                            website = obj['website'];
-
-                        var hours_obj = obj['hoursOfOperation'],
-                            hours_div = '';
-
-                        $(hours_obj).each( function(){
-                            hours_div  += '<div>' + this.day + ': ' + this.hours + '</div>';
-                        });
-
-                        var results = '<div class="location">'
-                            + '<strong>' + name + '</strong><br>'
-                            + address + '<br>'
-                            + phone + '<br>'
-                            + email + '<br>'
-                            + '<a href="' + website + '" target="_blank">' + website + '</a>'
-                            //+ hours_div
-                            + '</div>';
-
-                        $(results).appendTo('#results');
-
-                        geocoder.geocode( { 'address': address}, function(results, status) {
-
-                            if (status == 'OK') {
-
-                                map.setCenter(results[0].geometry.location);
-
-                                var marker = new google.maps.Marker({
-                                    map: map,
-                                    position: results[0].geometry.location
-                                });
-
-                            } else {
-                                alert('Geocode was not successful for the following reason: ' + status);
-                            }
-                        });
-
-                    }
-                }
-            });
-        }
-    });
-</script>
+<table>
+    <tr>
+        <td>
+            <strong>Hampden Branch</strong><br>
+            adsd<br>
+            adasd
+        </td>
+        <td>
+            <strong>Hampden Branch</strong><br>
+            adsd<br>
+            adasd
+        </td>
+    </tr>
+</table>
+<script src="script.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARht85CiqB7RclgGE58sw0i6oXl8bJLUs&callback=initMap" async defer></script>
 </body>
 </html>
