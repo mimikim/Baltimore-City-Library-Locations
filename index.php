@@ -41,9 +41,9 @@ $libraries = json_decode( $library_json );
 $zip_codes = [];
 
 // get zip codes
-foreach( $libraries as $library ) {
-    array_push( $zip_codes, $library->address->zipCode );
-}
+$zip_codes = array_map(function($library) {
+    return $library->address->zipCode;
+}, $libraries);
 
 // remove duplicates
 $zip_codes = array_unique($zip_codes);

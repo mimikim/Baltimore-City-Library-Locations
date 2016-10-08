@@ -2,7 +2,6 @@
 
 ## Demo
 
-
 ## Description
 This is a single-page application that finds and maps the location of every Baltimore city public library listed on the Enoch Pratt Library website.
 
