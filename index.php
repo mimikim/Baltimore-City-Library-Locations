@@ -61,20 +61,6 @@ sort($zip_codes);
     <input type="submit" value="Submit">
 </form>
 <div id="results"></div>
-<table>
-    <tr>
-        <td>
-            <strong>Hampden Branch</strong><br>
-            adsd<br>
-            adasd
-        </td>
-        <td>
-            <strong>Hampden Branch</strong><br>
-            adsd<br>
-            adasd
-        </td>
-    </tr>
-</table>
 <script src="script.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARht85CiqB7RclgGE58sw0i6oXl8bJLUs&callback=initMap" async defer></script>
 </body>
