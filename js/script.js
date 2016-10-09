@@ -1,10 +1,11 @@
-var map;
-var geocoder;
+var map,
+    geocoder,
+    map_div = document.getElementById('map');
 
 function initMap() {
     geocoder = new google.maps.Geocoder();
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(map_div, {
         center: {lat: 39.299236, lng: -76.609383 },
         zoom: 11
     });
@@ -13,26 +14,22 @@ function initMap() {
 $(document).ready(function() {
 
     $('#form').on('submit', function(e){
-
         e.preventDefault();
 
+        // clear previous results
         $('#results').empty();
-
         initMap();
 
+        // get results
         var zip_code = $(this).find(':selected').val();
-
         query_libraries( zip_code );
     });
-
-
 });
 
-function query_libraries( zip_code ) {
+
+function query_libraries( comparison_value ) {
 
     $.getJSON( 'libraries.json', function( data ) {
-
-        console.log(data);
 
         for( var key in data ) {
 
@@ -41,7 +38,7 @@ function query_libraries( zip_code ) {
 
             var address_obj = obj['address'];
 
-            if ( address_obj.zipCode == zip_code ) {
+            if ( address_obj.zipCode == comparison_value ) {
 
                 var address = address_obj.streetName + '<br>' + address_obj.cityState + ', ' + address_obj.zipCode;
 
@@ -54,16 +51,16 @@ function query_libraries( zip_code ) {
                     hours_div = '';
 
                 $(hours_obj).each( function(){
-                    hours_div  += '<div>' + this.day + ': ' + this.hours + '</div>';
+                    hours_div  += '<tr><td><strong>' + this.day + ':</strong>&nbsp;&nbsp;</td><td>' + this.hours + '</td></tr>';
                 });
 
                 var results = '<div class="location">'
                     + '<strong>' + name + '</strong><br>'
                     + address + '<br>'
                     + phone + '<br>'
-                    + email + '<br>'
+                    + '<a href="mailto:' + email + '" target="_blank">' + email + '</a>' + '<br>'
                     + '<a href="' + website + '" target="_blank">' + website + '</a>'
-                        //+ hours_div
+                    + '<table class="location-hours">' + hours_div + '</table>'
                     + '</div>';
 
                 $(results).appendTo('#results');
@@ -73,6 +70,7 @@ function query_libraries( zip_code ) {
                     if (status == 'OK') {
 
                         map.setCenter(results[0].geometry.location);
+                        map.setOptions({ zoom: 12 });
 
                         var marker = new google.maps.Marker({
                             map: map,

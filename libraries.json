@@ -549,8 +549,8 @@
     "contactEmail": "PNN@prattlibrary.org",
     "website": "http://www.prattlibrary.org/locations/pennave/",
     "neighborhood" : "Druid Hill",
-    "councilDistrict" : "Central",
-    "policeDistrict" : "11",
+    "councilDistrict" : "11",
+    "policeDistrict" : "Central",
     "wheelchairAccessible" : "yes",
     "hoursOfOperation": [{
         "day": "Monday",
