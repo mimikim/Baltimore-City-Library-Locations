@@ -26,63 +26,76 @@ $(document).ready(function() {
     });
 });
 
-
 function query_libraries( comparison_value ) {
+
+    var results_count = $('#result-count');
 
     $.getJSON( 'libraries.json', function( data ) {
 
-        for( var key in data ) {
+        var filtered_results = data.filter(function (library) {
+
+            return library.address.zipCode == comparison_value;
+
+        });
+
+        //console.log(filtered_results);
+        //console.log(filtered_results.length);
+
+        for( var key in filtered_results ) {
 
             // object iteration
-            var obj = data[key];
+            var obj = filtered_results[key];
 
-            var address_obj = obj['address'];
+            var address_obj = obj['address'],
+                address = address_obj.streetName + '<br>' + address_obj.cityState + ', ' + address_obj.zipCode;
 
-            if ( address_obj.zipCode == comparison_value ) {
+            var name = obj['locationName'],
+                phone = obj['phoneNumber'],
+                email = obj['contactEmail'],
+                website = obj['website'];
 
-                var address = address_obj.streetName + '<br>' + address_obj.cityState + ', ' + address_obj.zipCode;
+            var hours_obj = obj['hoursOfOperation'],
+                hours_div = '';
 
-                var name = obj['locationName'],
-                    phone = obj['phoneNumber'],
-                    email = obj['contactEmail'],
-                    website = obj['website'];
+            $(hours_obj).each( function(){
+                hours_div  += '<tr><td><strong>' + this.day + ':</strong>&nbsp;&nbsp;</td><td>' + this.hours + '</td></tr>';
+            });
 
-                var hours_obj = obj['hoursOfOperation'],
-                    hours_div = '';
+            var results = '<div class="location">'
+                + '<strong>' + name + '</strong><br>'
+                + address + '<br>'
+                + phone + '<br>'
+                + '<a href="mailto:' + email + '" target="_blank">' + email + '</a>' + '<br>'
+                + '<a href="' + website + '" target="_blank">' + website + '</a>'
+                + '<table class="location-hours">' + hours_div + '</table>'
+                + '</div>';
 
-                $(hours_obj).each( function(){
-                    hours_div  += '<tr><td><strong>' + this.day + ':</strong>&nbsp;&nbsp;</td><td>' + this.hours + '</td></tr>';
-                });
+            $(results).appendTo('#results');
 
-                var results = '<div class="location">'
-                    + '<strong>' + name + '</strong><br>'
-                    + address + '<br>'
-                    + phone + '<br>'
-                    + '<a href="mailto:' + email + '" target="_blank">' + email + '</a>' + '<br>'
-                    + '<a href="' + website + '" target="_blank">' + website + '</a>'
-                    + '<table class="location-hours">' + hours_div + '</table>'
-                    + '</div>';
+            geocoder.geocode( { 'address': address}, function(results, status) {
 
-                $(results).appendTo('#results');
+                if (status == 'OK') {
 
-                geocoder.geocode( { 'address': address}, function(results, status) {
+                    map.setCenter(results[0].geometry.location);
+                    map.setOptions({ zoom: 12 });
 
-                    if (status == 'OK') {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
 
-                        map.setCenter(results[0].geometry.location);
-                        map.setOptions({ zoom: 12 });
-
-                        var marker = new google.maps.Marker({
-                            map: map,
-                            position: results[0].geometry.location
-                        });
-
-                    } else {
-                        alert('Geocode was not successful for the following reason: ' + status);
-                    }
-                });
-
-            }
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
         }
+
+
+        if ( filtered_results.length > 1 ) {
+            $(results_count).text(filtered_results.length + ' Locations');
+        } else {
+            $(results_count).text(filtered_results.length + ' Location');
+        }
+
     });
 }
