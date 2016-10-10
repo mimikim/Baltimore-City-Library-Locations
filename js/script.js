@@ -13,20 +13,33 @@ function initMap() {
 
 $(document).ready(function() {
 
-    $('#form').on('submit', function(e){
-        e.preventDefault();
+    var select = $('#form').find('select');
+
+    $(select).on('change', function() {
+        // clear other selections
+        var sibling_inputs = $(select).not(this);
+        $(sibling_inputs).each(function(){
+            $(this).val(0);
+        });
 
         // clear previous results
         $('#results').empty();
         initMap();
 
         // get results
-        var zip_code = $(this).find(':selected').val();
-        query_libraries( zip_code );
+        var comparison_location = $(this).data('obj-location'),
+            selection_value = $(this).find(':selected').val(),
+            is_zip = false;
+
+        if ( comparison_location === 'address' ) {
+            is_zip = true;
+        }
+
+        query_libraries( selection_value, comparison_location, is_zip );
     });
 });
 
-function query_libraries( comparison_value, comparison_location ) {
+function query_libraries( comparison_value, comparison_location, is_zip ) {
 
     var results_count = $('#result-count');
 
@@ -34,9 +47,11 @@ function query_libraries( comparison_value, comparison_location ) {
 
         var filtered_results = data.filter(function (library) {
 
-            //return library[comparison_location] == comparison_value;
-            return library.address.zipCode == comparison_value;
-
+            if ( is_zip ) {
+                return library[comparison_location].zipCode === comparison_value;
+            } else {
+                return library[comparison_location] === comparison_value;
+            }
         });
 
         //console.log(filtered_results);
@@ -76,26 +91,19 @@ function query_libraries( comparison_value, comparison_location ) {
             place_markers(address, name);
         }
 
-        if ( filtered_results.length > 1 ) {
-            $(results_count).text(filtered_results.length + ' Locations');
-        } else {
+        if ( filtered_results.length === 1 ) {
             $(results_count).text(filtered_results.length + ' Location');
+        } else {
+            $(results_count).text(filtered_results.length + ' Locations');
         }
-
     });
 }
 
 function place_markers( address, name ) {
-
     geocoder.geocode( { 'address': address}, function(results, status) {
-
-        //console.log(results);
-
         if (status == 'OK') {
 
-            var results_obj = results[0],
-                address_components = results_obj.address_components;
-
+            var results_obj = results[0];
             map.setCenter(results_obj.geometry.location);
             map.setOptions({ zoom: 12 });
 
@@ -104,16 +112,11 @@ function place_markers( address, name ) {
                 position: results_obj.geometry.location
             });
 
-            var location_address = address_components[0].short_name
-                + ' ' + address_components[1].short_name
-                + ',<br>' + address_components[3].short_name
-                + ', ' + address_components[4].short_name
-                + ' ' + address_components[6].short_name;
-
             var contentString = '<div id="content">'
                 + '<strong>' + name + '</strong><br>'
-                + location_address
-                + '<br><a href="http://maps.google.com/maps?saddr=' + results_obj.formatted_address + '" target="_blank">Get Directions</a>' + '</div>';
+                + address
+                + '<br><a href="http://maps.google.com/maps?saddr=' + results_obj.formatted_address + '" target="_blank">Get Directions</a>'
+                + '</div>';
 
             var infowindow = new google.maps.InfoWindow({
                 content: contentString

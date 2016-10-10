@@ -37,18 +37,13 @@
         height: 300px;
     }
 
-    #form {
-
-    }
-
     .panel {
-        -webkit-box-shadow: 0px 0px 10px 0px rgba(240,240,240,1);
-        -moz-box-shadow: 0px 0px 10px 0px rgba(240,240,240,1);
-        box-shadow: 0px 0px 10px 0px rgba(240,240,240,1);
+        -webkit-box-shadow: 0 0 10px 0 rgba(240,240,240,1);
+        -moz-box-shadow: 0 0 10px 0 rgba(240,240,240,1);
+        box-shadow: 0 0 10px 0 rgba(240,240,240,1);
     }
 
     .location {
-        margin: 0 0 0 15px;
         overflow-wrap: break-word;
     }
 
@@ -67,7 +62,6 @@
         .form-group {
             margin-right: 10px;
         }
-
     }
 </style>
 <body>
@@ -88,7 +82,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Filter Libraries
+                    Filter Libraries By:
                 </div>
                 <div class="panel-body">
                     <?php
@@ -101,7 +95,7 @@
                     foreach ( $libraries as $library ) {
                         $form_data['zip_codes'][] = $library->address->zipCode;
                         $form_data['neighborhoods'][] = $library->neighborhood;
-                        $form_data['police_districts'][] = $library->policeDistrict;;
+                        $form_data['police_districts'][] = $library->policeDistrict;
                         $form_data['council_districts'][] = $library->councilDistrict;
                     }
 
@@ -114,16 +108,16 @@
                     <form id="form" class="form-inline">
                         <div class="form-group">
                             <label for="form-zipcodes">Zipcodes</label>
-                            <select id="form-zipcodes">
+                            <select id="form-zipcodes" data-obj-location="address">
                                 <option value="0"></option>
                                 <?php foreach ( $form_data['zip_codes'] as $zipcode ) {
                                     echo '<option value="' . $zipcode . '">' . $zipcode . '</option>';
                                 } ?>
                             </select>
                         </div>
-                        <!--<div class="form-group">
+                        <div class="form-group">
                             <label for="form-neighborhoods">Neighborhoods</label>
-                            <select id="form-neighborhoods">
+                            <select id="form-neighborhoods" data-obj-location="neighborhood">
                                 <option value="0"></option>
                                 <?php foreach ( $form_data['neighborhoods'] as $neighborhood ) {
                                     echo '<option value="' . $neighborhood . '">' . $neighborhood . '</option>';
@@ -132,7 +126,7 @@
                         </div>
                         <div class="form-group">
                             <label for="form-police-districts">Police Districts</label>
-                            <select id="form-police-districts">
+                            <select id="form-police-districts" data-obj-location="policeDistrict">
                                 <option value="0"></option>
                                 <?php foreach ( $form_data['police_districts'] as $police_district ) {
                                     echo '<option value="' . $police_district . '">' . $police_district . '</option>';
@@ -141,7 +135,7 @@
                         </div>
                         <div class="form-group">
                             <label for="form-council-districts">Council Districts</label>
-                            <select id="form-council-districts">
+                            <select id="form-council-districts" data-obj-location="councilDistrict">
                                 <option value="0"></option>
                                 <?php foreach ( $form_data['council_districts'] as $council_district ) {
                                     echo '<option value="' . $council_district . '">' . $council_district . '</option>';
@@ -150,9 +144,11 @@
                         </div>
                         <div class="form-group">
                             <label for="form-wheelchair">Wheelchair Accessibility?</label>
-                            <input type="checkbox" value="yes" id="form-wheelchair">
-                        </div>-->
-                        <input type="submit" value="Submit">
+                            <select id="form-wheelchair" data-obj-location="wheelchairAccessible">
+                                <option value="0"></option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
