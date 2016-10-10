@@ -4,7 +4,6 @@ var map,
 
 function initMap() {
     geocoder = new google.maps.Geocoder();
-
     map = new google.maps.Map(map_div, {
         center: {lat: 39.299236, lng: -76.609383 },
         zoom: 11
@@ -107,6 +106,8 @@ function place_markers( address, name ) {
             map.setCenter(results_obj.geometry.location);
             map.setOptions({ zoom: 12 });
 
+            //console.log(results_obj);
+
             var marker = new google.maps.Marker({
                 map: map,
                 position: results_obj.geometry.location
@@ -128,7 +129,8 @@ function place_markers( address, name ) {
             });
 
         } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            // googlemaps gives an "OVER_QUERY_LIMIT" if too many requests are made at once (unless you are paying for a Premium Plan)
+            console.log('Geocode was not successful for the following reason: ' + status);
         }
-    });
+    })
 }

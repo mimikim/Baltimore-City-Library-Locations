@@ -142,13 +142,13 @@
                                 } ?>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="form-wheelchair">Wheelchair Accessibility?</label>
                             <select id="form-wheelchair" data-obj-location="wheelchairAccessible">
                                 <option value="0"></option>
                                 <option value="yes">Yes</option>
                             </select>
-                        </div>
+                        </div>-->
                     </form>
                 </div>
             </div>
