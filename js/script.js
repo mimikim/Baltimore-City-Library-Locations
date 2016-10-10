@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
 });
 
-function query_libraries( comparison_value ) {
+function query_libraries( comparison_value, comparison_location ) {
 
     var results_count = $('#result-count');
 
@@ -34,6 +34,7 @@ function query_libraries( comparison_value ) {
 
         var filtered_results = data.filter(function (library) {
 
+            //return library[comparison_location] == comparison_value;
             return library.address.zipCode == comparison_value;
 
         });
@@ -72,24 +73,8 @@ function query_libraries( comparison_value ) {
 
             $(results).appendTo('#results');
 
-            geocoder.geocode( { 'address': address}, function(results, status) {
-
-                if (status == 'OK') {
-
-                    map.setCenter(results[0].geometry.location);
-                    map.setOptions({ zoom: 12 });
-
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-
-                } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
+            place_markers(address, name);
         }
-
 
         if ( filtered_results.length > 1 ) {
             $(results_count).text(filtered_results.length + ' Locations');
@@ -97,5 +82,50 @@ function query_libraries( comparison_value ) {
             $(results_count).text(filtered_results.length + ' Location');
         }
 
+    });
+}
+
+function place_markers( address, name ) {
+
+    geocoder.geocode( { 'address': address}, function(results, status) {
+
+        //console.log(results);
+
+        if (status == 'OK') {
+
+            var results_obj = results[0],
+                address_components = results_obj.address_components;
+
+            map.setCenter(results_obj.geometry.location);
+            map.setOptions({ zoom: 12 });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results_obj.geometry.location
+            });
+
+            var location_address = address_components[0].short_name
+                + ' ' + address_components[1].short_name
+                + ',<br>' + address_components[3].short_name
+                + ', ' + address_components[4].short_name
+                + ' ' + address_components[6].short_name;
+
+            var contentString = '<div id="content">'
+                + '<strong>' + name + '</strong><br>'
+                + location_address
+                + '<br><a href="http://maps.google.com/maps?saddr=' + results_obj.formatted_address + '" target="_blank">Get Directions</a>' + '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+                map.setCenter(results_obj.geometry.location);
+            });
+
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
     });
 }

@@ -14,6 +14,24 @@
         font-family: 'PT Sans', sans-serif;
     }
 
+    header {
+        background: #212121;
+        background: -moz-linear-gradient(top, #373737, #212121);
+        background: -webkit-linear-gradient(top, #373737, #212121);
+        background: -ms-linear-gradient(top, #373737, #212121);
+        background: -o-linear-gradient(top, #373737, #212121);
+        background: linear-gradient(top, #373737, #212121);
+        color: white;
+        font-size: 48px;
+        padding: 40px 0;
+        margin-bottom: 40px;
+        font-family: 'Volkhov', serif;
+    }
+
+    main {
+        margin-bottom: 100px;
+    }
+
     #map {
         width: 100%;
         height: 300px;
@@ -45,54 +63,23 @@
         margin:15px 0;
     }
 
-    header {
-        background: #212121;
-        background: -moz-linear-gradient(top, #373737, #212121);
-        background: -webkit-linear-gradient(top, #373737, #212121);
-        background: -ms-linear-gradient(top, #373737, #212121);
-        background: -o-linear-gradient(top, #373737, #212121);
-        background: linear-gradient(top, #373737, #212121);
-        color: white;
-        font-size: 48px;
-        padding: 40px 0;
-        margin-bottom: 40px;
-        font-family: 'Volkhov', serif;
-    }
-
-    footer {
-        background: #212121;
-        color: white;
-        padding: 40px 0;
-        margin-top: 140px;
-    }
-
-    @media screen and ( min-width: 480px ) {
-
-    }
-
     @media screen and ( min-width: 768px ) {
+        .form-group {
+            margin-right: 10px;
+        }
 
     }
-
-    @media screen and ( min-width: 992px ) {
-
-    }
-
-    @media screen and ( min-width: 1200px ) {
-
-    }
-
 </style>
 <body>
 <header>
     <div class="container">
-        <div class="row"> <div class="col-sm-3 text-center">
+        <div class="row">
+            <div class="col-sm-3 text-center">
                 <img src="enoch-pratt-library-logo.png" class="enoch-logo">
             </div>
             <div class="col-sm-9">
               Enoch Pratt Free Library Locations
             </div>
-
         </div>
     </div>
 </header>
@@ -125,14 +112,46 @@
                     }
                     ?>
                     <form id="form" class="form-inline">
-                        <label for="zipcodes">Zipcodes</label>
-                        <select name="zipcodes">
-                            <?php foreach ( $form_data['zip_codes'] as $zipcode ) {
-                                echo '<option value="' . $zipcode . '">' . $zipcode . '</option>';
-                            } ?>
-                        </select>
-
-
+                        <div class="form-group">
+                            <label for="form-zipcodes">Zipcodes</label>
+                            <select id="form-zipcodes">
+                                <option value="0"></option>
+                                <?php foreach ( $form_data['zip_codes'] as $zipcode ) {
+                                    echo '<option value="' . $zipcode . '">' . $zipcode . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="form-neighborhoods">Neighborhoods</label>
+                            <select id="form-neighborhoods">
+                                <option value="0"></option>
+                                <?php foreach ( $form_data['neighborhoods'] as $neighborhood ) {
+                                    echo '<option value="' . $neighborhood . '">' . $neighborhood . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-police-districts">Police Districts</label>
+                            <select id="form-police-districts">
+                                <option value="0"></option>
+                                <?php foreach ( $form_data['police_districts'] as $police_district ) {
+                                    echo '<option value="' . $police_district . '">' . $police_district . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-council-districts">Council Districts</label>
+                            <select id="form-council-districts">
+                                <option value="0"></option>
+                                <?php foreach ( $form_data['council_districts'] as $council_district ) {
+                                    echo '<option value="' . $council_district . '">' . $council_district . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-wheelchair">Wheelchair Accessibility?</label>
+                            <input type="checkbox" value="yes" id="form-wheelchair">
+                        </div>-->
                         <input type="submit" value="Submit">
                     </form>
                 </div>
@@ -162,12 +181,6 @@
         </div>
     </div>
 </main>
-<footer>
-    <div class="container">
-        Baltimore City Library Locations maintained by <a href="https://github.com/mimikim" target="_blank">mimikim</a>
-    </div>
-</footer>
-
 <script src="js/script.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARht85CiqB7RclgGE58sw0i6oXl8bJLUs&callback=initMap" async defer></script>
 </body>
