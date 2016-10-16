@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Baltimore Library Locations - AngularJS App</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Volkhov" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                <img src="enoch-pratt-library-logo.png" class="enoch-logo">
+            </div>
+            <div class="col-sm-9">
+                Enoch Pratt Free Library Locations
+            </div>
+        </div>
+    </div>
+</header>
+<main class="container" data-ng-app="libraryApp">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Filter Libraries By:
+                </div>
+                <div class="panel-body">
+                    <form id="form" class="form-inline" data-ng-controller="libraryFilters">
+                        <div class="form-group">
+                            <label for="form-zipcodes">Zipcodes</label>
+                            <select id="form-zipcodes" data-obj-location="" data-ng-model="filterSelect" data-ng-change="selectChange('address')">
+                                <option data-ng-repeat="zip in zipCodes">{{zip}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-neighborhoods">Neighborhoods</label>
+                            <select id="form-neighborhoods" data-ng-model="filterSelect" data-ng-change="selectChange('neighborhood')">
+                                <option data-ng-repeat="neighborhood in neighborhoods">{{neighborhood}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-police-districts">Police Districts</label>
+                            <select id="form-police-districts" data-ng-model="filterSelect" data-ng-change="selectChange('policeDistrict')">
+                                <option data-ng-repeat="police in policeDistricts">{{police}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-council-districts">Council Districts</label>
+                            <select id="form-council-districts" data-ng-model="filterSelect" data-ng-change="selectChange('councilDistrict')">
+                                <option data-ng-repeat="council in councilDistricts">{{council}}</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Displaying <span id="result-count">0 Locations</span>
+                </div>
+                <div class="panel-body">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Library Location Details
+                </div>
+                <div class="panel-body">
+                    <div id="results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="js/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARht85CiqB7RclgGE58sw0i6oXl8bJLUs&callback=initMap" async defer></script>
+</body>
+</html>

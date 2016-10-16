@@ -1,0 +1,56 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #f7f9fc;
+    font-family: 'PT Sans', sans-serif;
+}
+
+header {
+    background: #212121;
+    background: -moz-linear-gradient(top, #373737, #212121);
+    background: -webkit-linear-gradient(top, #373737, #212121);
+    background: -ms-linear-gradient(top, #373737, #212121);
+    background: -o-linear-gradient(top, #373737, #212121);
+    background: linear-gradient(top, #373737, #212121);
+    color: white;
+    font-size: 48px;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    font-family: 'Volkhov', serif;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+.panel {
+    -webkit-box-shadow: 0 0 10px 0 rgba(240,240,240,1);
+    -moz-box-shadow: 0 0 10px 0 rgba(240,240,240,1);
+    box-shadow: 0 0 10px 0 rgba(240,240,240,1);
+}
+
+.location {
+    overflow-wrap: break-word;
+}
+
+.location:not(:first-of-type):before {
+    content: '';
+    display: block;
+    border-top:1px solid #ddd;
+    padding-top: 15px;
+}
+
+.location-hours {
+    margin:15px 0;
+}
+
+@media screen and ( min-width: 768px ) {
+    .form-group {
+        margin-right: 10px;
+    }
+}

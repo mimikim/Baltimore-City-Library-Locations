@@ -1,112 +1,20 @@
-var map,
-    geocoder,
-    map_div = document.getElementById('map');
-
+var map_div = document.getElementById('map');
 function initMap() {
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(map_div, {
         center: {lat: 39.299236, lng: -76.609383 },
-        zoom: 11
+        zoom: 11,
+        scrollwheel: false
     });
 }
 
-$(document).ready(function() {
-
-    var select = $('#form').find('select');
-
-    $(select).on('change', function() {
-        // clear other selections
-        var sibling_inputs = $(select).not(this);
-        $(sibling_inputs).each(function(){
-            $(this).val(0);
-        });
-
-        // clear previous results
-        $('#results').empty();
-        initMap();
-
-        // get results
-        var comparison_location = $(this).data('obj-location'),
-            selection_value = $(this).find(':selected').val(),
-            is_zip = false;
-
-        if ( comparison_location === 'address' ) {
-            is_zip = true;
-        }
-
-        query_libraries( selection_value, comparison_location, is_zip );
-    });
-});
-
-function query_libraries( comparison_value, comparison_location, is_zip ) {
-
-    var results_count = $('#result-count');
-
-    $.getJSON( 'libraries.json', function( data ) {
-
-        var filtered_results = data.filter(function (library) {
-
-            if ( is_zip ) {
-                return library[comparison_location].zipCode === comparison_value;
-            } else {
-                return library[comparison_location] === comparison_value;
-            }
-        });
-
-        //console.log(filtered_results);
-        //console.log(filtered_results.length);
-
-        for( var key in filtered_results ) {
-
-            // object iteration
-            var obj = filtered_results[key];
-
-            var address_obj = obj['address'],
-                address = address_obj.streetName + '<br>' + address_obj.cityState + ', ' + address_obj.zipCode;
-
-            var name = obj['locationName'],
-                phone = obj['phoneNumber'],
-                email = obj['contactEmail'],
-                website = obj['website'];
-
-            var hours_obj = obj['hoursOfOperation'],
-                hours_div = '';
-
-            $(hours_obj).each( function(){
-                hours_div  += '<tr><td><strong>' + this.day + ':</strong>&nbsp;&nbsp;</td><td>' + this.hours + '</td></tr>';
-            });
-
-            var results = '<div class="location">'
-                + '<strong>' + name + '</strong><br>'
-                + address + '<br>'
-                + phone + '<br>'
-                + '<a href="mailto:' + email + '" target="_blank">' + email + '</a>' + '<br>'
-                + '<a href="' + website + '" target="_blank">' + website + '</a>'
-                + '<table class="location-hours">' + hours_div + '</table>'
-                + '</div>';
-
-            $(results).appendTo('#results');
-
-            place_markers(address, name);
-        }
-
-        if ( filtered_results.length === 1 ) {
-            $(results_count).text(filtered_results.length + ' Location');
-        } else {
-            $(results_count).text(filtered_results.length + ' Locations');
-        }
-    });
-}
-
+// place map markers on googlemap
 function place_markers( address, name ) {
     geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == 'OK') {
-
             var results_obj = results[0];
             map.setCenter(results_obj.geometry.location);
             map.setOptions({ zoom: 12 });
-
-            //console.log(results_obj);
 
             var marker = new google.maps.Marker({
                 map: map,
@@ -127,10 +35,109 @@ function place_markers( address, name ) {
                 infowindow.open(map, marker);
                 map.setCenter(results_obj.geometry.location);
             });
-
-        } else {
-            // googlemaps gives an "OVER_QUERY_LIMIT" if too many requests are made at once (unless you are paying for a Premium Plan)
-            console.log('Geocode was not successful for the following reason: ' + status);
         }
     })
 }
+
+// sort and remove dupes
+function library_sort_dupes( array ) {
+    var return_array = [];
+
+    // if element length is max 2, sort numerically
+    if( array[0].length <= 2 ) {
+        array.sort(function(a, b){ return a - b; });
+    } else {
+        // else sort alphabetically (default)
+        array.sort();
+    }
+
+    array.forEach(function(element, index){
+        // for each element in array,
+        // if element does not already exist, please push
+        if ( return_array.indexOf(element) == -1 ) {
+            return_array.push(element);
+        }
+    });
+    return return_array;
+}
+
+// define module
+var app = angular.module('libraryApp', []);
+
+// define controller, and use $http service
+app.controller('libraryFilters', function($scope, $http) {
+    $http.get('libraries.json').then(function(response) {
+
+        var libraries = response.data,
+            zipCodes = [],
+            neighborhoods = [],
+            policeDistricts = [],
+            councilDistricts = [];
+
+        // for each element in the libraries object
+        for( var key in libraries ) {
+            zipCodes.push( libraries[key]['address'].zipCode );
+            neighborhoods.push( libraries[key]['neighborhood'] );
+            policeDistricts.push( libraries[key]['policeDistrict'] );
+            councilDistricts.push( libraries[key]['councilDistrict'] );
+        }
+
+        // library data
+        $scope.zipCodes = library_sort_dupes( zipCodes );
+        $scope.neighborhoods = library_sort_dupes( neighborhoods );
+        $scope.policeDistricts = library_sort_dupes( policeDistricts );
+        $scope.councilDistricts = library_sort_dupes( councilDistricts );
+
+        // on select change
+        $scope.selectChange = function(obj_location) {
+            var results_container = document.getElementById('results'),
+                results_count = document.getElementById('result-count'),
+                is_zip = false;
+
+            if ( obj_location === 'address' ) { is_zip = true; }
+
+            // clear previous results
+            results_container.innerHTML = '';
+            initMap();
+
+            // get filtered results
+            var filtered_results = libraries.filter(function (library) {
+                if ( is_zip ) {
+                    return library[obj_location].zipCode === $scope.filterSelect;
+                } else {
+                    return library[obj_location] === $scope.filterSelect;
+                }
+            });
+
+            for( var key in filtered_results ) {
+                var obj = filtered_results[key],
+                    address_obj = obj['address'],
+                    address = address_obj.streetName + '<br>' + address_obj.cityState + ', ' + address_obj.zipCode,
+                    hours_obj = obj['hoursOfOperation'],
+                    hours_div = '';
+
+                hours_obj.forEach(function(element, index){
+                    hours_div  += '<tr><td><strong>' + element.day + ':</strong>&nbsp;&nbsp;</td><td>' + element.hours + '</td></tr>';
+                });
+
+                results_container.innerHTML += '<div class="location">'
+                + '<strong>' + obj['locationName'] + '</strong><br>'
+                + address + '<br>'
+                + obj['phoneNumber'] + '<br>'
+                + '<a href="mailto:' + obj['contactEmail'] + '" target="_blank">' + obj['contactEmail'] + '</a>' + '<br>'
+                + '<a href="' +  obj['website'] + '" target="_blank">' + obj['website'] + '</a>' + '<br>'
+                + 'Wheelchair Accessible? ' + obj['wheelchairAccessible']
+                + '<table class="location-hours">' + hours_div + '</table>'
+                + '</div>';
+
+                place_markers(address, obj['locationName']);
+            }
+
+            if ( filtered_results.length === 1 ) {
+                results_count.innerHTML = filtered_results.length + ' Location';
+            } else {
+                results_count.innerHTML = filtered_results.length + ' Locations';
+            }
+        };
+    });
+});
