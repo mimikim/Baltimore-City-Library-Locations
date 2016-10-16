@@ -1,6 +1,7 @@
 # Enoch Pratt Free Library Locations in Baltimore City
 
 ## Demo
+[https://mimikim.github.io/Baltimore-City-Library-Locations](Demo Link)
 
 ## Description
 This is a single-page application written with AngularJS that assembles information queried from a JSON data set and drops a location pin on a map for every Baltimore City public library listed on the [http://www.prattlibrary.org/](Enoch Pratt Library) website.
